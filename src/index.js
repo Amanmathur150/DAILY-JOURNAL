@@ -1,17 +1,44 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+import "./index.css"
+import App from "./App"
+
+import { Provider } from 'react-redux';
+import {createStore ,combineReducers ,applyMiddleware} from "redux" ;
+import thunkMiddleware from "redux-thunk"
+import {createLogger} from "redux-logger";
+
+import {changeConfirmDelete , posts,change_id,auth,compose_post,ismoreclick,onePost,allposts,searchfield,err,sign_up,sign_In,message,all_message,readed_messages,unread_messages,showMessage} from "./reducers"
+
+const rootReducer = combineReducers({changeConfirmDelete,posts,
+                                        change_id,
+                                        compose_post,
+                                        ismoreclick,
+                                        onePost,
+                                        allposts,
+                                        searchfield,
+                                        err,
+                                        sign_up,
+                                        sign_In,
+                                        auth,
+                                        message,
+                                        all_message,
+                                        readed_messages,
+                                        unread_messages,
+                                        showMessage})
+
+// const logger = createLogger()
+
+export const store = createStore(rootReducer,applyMiddleware(thunkMiddleware))                                        
+
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+
+  <Provider store={store}>
+   <App />
+  </Provider>
+  ,
   document.getElementById('root')
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

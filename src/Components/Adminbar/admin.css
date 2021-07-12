@@ -1,0 +1,49 @@
+.admin-bar{
+    display: flex;
+    margin: 20px 100px;
+    justify-content: space-around;
+    
+}
+
+.admin-bar button{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    height: 42px;
+    width: 120px;
+    
+    font-size: 15px;
+    font-weight: bold;
+    
+    background:rgb(8, 247, 255);
+    box-shadow: 0px -14px 1px 4.5px inset rgb(77, 169, 255);
+    
+    border: 1px solid rgb(0, 0, 0);
+    transition: 400ms;
+    cursor: pointer;
+  
+   
+}
+
+.admin-bar button:active{
+    transform: scale(0.8);
+    color: cornsilk;
+    
+}
+
+.admin-bar button:hover{
+    transform: translateY(-10px);
+    color: cornsilk;
+    
+}
+
+#new-message{
+    border-radius: 70%;
+    background: red;
+    font-size: 1.2rem;
+    
+    /* height: 20px;
+    width: 20px; */
+}

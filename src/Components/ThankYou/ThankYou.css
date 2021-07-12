@@ -1,0 +1,16 @@
+.big-box{
+    display: flex;
+    height: 500px;
+    width: 90%;
+    margin-left: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+.thankyou{
+    font-size: 3rem;
+    font-weight: 600;
+    color: red;
+    font-family: cursive;
+    
+}
